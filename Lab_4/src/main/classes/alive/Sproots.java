@@ -4,7 +4,7 @@ import main.classes.groups.RichClass;
 import main.exceptions.IncorrectAgeException;
 import main.interfaces.FoodInteraction;
 
-public class Sproots extends RichClass.RichMan implements FoodInteraction {
+public class Sproots extends RichMan implements FoodInteraction {
     public Sproots(String name){
         super(name);
     }

@@ -9,7 +9,7 @@ import main.interfaces.WorldInteraction;
 
 import java.util.ArrayList;
 
-public class Scooperfield extends RichClass.RichMan implements Emotions, FoodInteraction, PermissionInteractive, WorldInteraction {
+public class Scooperfield extends RichMan implements Emotions, FoodInteraction, PermissionInteractive, WorldInteraction {
     private ArrayList<String> clothes = new ArrayList<String>();
 
     public Scooperfield(String name){

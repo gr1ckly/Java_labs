@@ -6,8 +6,8 @@ import main.exceptions.IncorrectAgeException;
 import main.interfaces.ForcedAbility;
 import main.interfaces.PermissionInteractive;
 import main.interfaces.Thinkable;
-
 import java.util.ArrayList;
+import main.classes.alive.*;
 
 public class WorkingClass extends Group {
     private ArrayList<Workman> workmans = new ArrayList<Workman>();
@@ -20,72 +20,6 @@ public class WorkingClass extends Group {
         super(name);
         for (Workman workman:workmen){
             this.workmans.add(workman);
-        }
-    }
-
-    public static class Workman extends Person implements Thinkable, ForcedAbility {
-        public Workman(String name){
-            super(name);
-        }
-        public Workman(String name, int age) throws IncorrectAgeException {
-            super(name, age);
-        }
-
-        public String build(){
-            return "построить";
-        }
-
-        @Override
-        public String thinkable(){
-            return "считать, что";
-        }
-
-        public String issuedAnOrder(){
-            return "издать приказ";
-        }
-
-        public String toRun(){
-            return "сбежать";
-        }
-
-        @Override
-        public String walking(){
-            return "подойти";
-        }
-
-        @Override
-        public String forcedTo(){
-            return "нуждаться";
-        }
-
-        public String exist(){
-            return "есть";
-        }
-
-        @Override
-        public boolean equals(Object otherObject){
-            if (!super.equals(otherObject)) return false;
-            WorkingClass.Workman other = (WorkingClass.Workman) otherObject;
-            return this.getId().equals(other.getId()) && this.name.equals(other.getName()) && this.getAge()==other.getAge();
-        }
-
-        @Override
-        public String toString(){
-            return getClass().toString()+"[name=" + this.getName() + ", id=" + this.getId() + ", age=" + this.getAge() + "]";
-        }
-    }
-
-    public static class WatchMan extends WorkingClass.Workman implements PermissionInteractive {
-        public WatchMan(String name){
-            super(name);
-        }
-        public WatchMan(String name, int age) throws IncorrectAgeException {
-            super(name, age);
-        }
-
-        @Override
-        public String permission(){
-            return "разрешить";
         }
     }
 
